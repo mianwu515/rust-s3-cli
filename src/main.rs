@@ -44,8 +44,8 @@ async fn main() {
     // Match on subcommand
     match args.command {
         Some(Commands::Create { bucket }) => {
-            let bucket_region = s3cli::bucket_region().await.unwrap();
-            s3cli::create_bucket(&client, &bucket, &bucket_region)
+            //let bucket_region = s3cli::bucket_region().await.unwrap();
+            s3cli::create_bucket(&client, &bucket, "us-west-2") //bucket_region
                 .await
                 .unwrap();
         }
